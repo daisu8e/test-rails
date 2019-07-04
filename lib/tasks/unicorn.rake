@@ -39,7 +39,7 @@ namespace :unicorn do
   end
 
   def pid_file
-    Rails.root.join('tmp', 'unicorn.pid')
+    Rails.root.join('tmp', "unicorn.pid")
   end
 
   def kill signal
