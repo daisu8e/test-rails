@@ -42,13 +42,13 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 # set :ssh_options, verify_host_key: :secure
 
 
-#set :rbenv_type, :user
-#set :rbenv_ruby, "2.6.3"
-#set :rbenv_custom_path, "/usr/local/rbenv"
-#set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-#set :rbenv_map_bins, %w{rake gem bundle ruby rails}
-#set :rbenv_roles, :all
-#
+set :rbenv_type, :user
+set :rbenv_ruby, "2.6.3"
+set :rbenv_custom_path, "/home/ubuntu/.anyenv/envs/rbenv"
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_roles, :all
+
 #set :bundle_path, -> { shared_path.join("vendor/bundle") }
 #set :bundle_env_variables, { nokogiri_use_system_libraries: 1 }
 #
