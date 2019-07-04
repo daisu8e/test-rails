@@ -1,14 +1,15 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.11.0"
+lock "3.11.0"
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :application, "dashboard-api"
+set :repo_url, "git@github.com:daisu8e/dashboard-api.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
+set :deploy_to, "/home/ubuntu/dashboard-api"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -19,12 +20,14 @@ set :repo_url, "git@example.com:me/my_repo.git"
 
 # Default value for :pty is false
 # set :pty, true
+set :pty, true
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml"
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "vendor/bundle"
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -37,3 +40,24 @@ set :repo_url, "git@example.com:me/my_repo.git"
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+
+
+#set :rbenv_type, :user
+#set :rbenv_ruby, "2.6.3"
+#set :rbenv_custom_path, "/usr/local/rbenv"
+#set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+#set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+#set :rbenv_roles, :all
+#
+#set :bundle_path, -> { shared_path.join("vendor/bundle") }
+#set :bundle_env_variables, { nokogiri_use_system_libraries: 1 }
+#
+#set :unicorn_pid, "#{shared_path}/tmp/pids/unicorn.pid"
+#set :unicorn_config_path, -> { current_path.join("config/unicorn.rb") }
+#
+#after "deploy:publishing", "deploy:restart"
+#namespace :deploy do
+#  task :restart do
+#    invoke "unicorn:restart"
+#  end
+#end
