@@ -51,4 +51,17 @@ production:
   <<: *default
   database: dashboard-api_production
   username: dashboard-api
-  password: <%= ENV['DASHBOARD-API_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DASHBOARD_API_DATABASE_PASSWORD'] %>
+
+staging:
+  <<: *default
+  database: dashboard-api_staging
+  username: dashboard-api
+  password: <%= ENV['DASHBOARD_API_DATABASE_PASSWORD'] %>
+
+testing:
+  <<: *default
+  database: dashboard-api_testing
+  username: dashboard-api
+  password: <%= ENV['DASHBOARD_API_DATABASE_PASSWORD'] %>
+
