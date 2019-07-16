@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: dashboard-api_development
+  database: dashboard_api_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: dashboard-api_test
+  database: dashboard_api_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,19 +49,19 @@ test:
 #
 production:
   <<: *default
-  database: dashboard-api_production
-  username: dashboard-api
+  database: dashboard_api_production
+  username: production
   password: <%= ENV['DASHBOARD_API_DATABASE_PASSWORD'] %>
 
 staging:
   <<: *default
-  database: dashboard-api_staging
-  username: dashboard-api
+  database: dashboard_api_staging
+  username: staging
   password: <%= ENV['DASHBOARD_API_DATABASE_PASSWORD'] %>
 
 testing:
   <<: *default
-  database: dashboard-api_testing
-  username: dashboard-api
+  database: dashboard_api_testing
+  username: testing
   password: <%= ENV['DASHBOARD_API_DATABASE_PASSWORD'] %>
 
