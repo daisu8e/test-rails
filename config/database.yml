@@ -56,8 +56,8 @@ production:
 staging:
   <<: *default
   database: dashboard_api_staging
-  username: aaaaaaaaaa
-  password: aaaAAA111!!!
+  username: staging
+  password: <%= ENV['DASHBOARD_API_DATABASE_PASSWORD'] %>
 
 testing:
   <<: *default
