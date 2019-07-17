@@ -5,10 +5,10 @@ working_directory rails_root
 worker_processes 3
 timeout 15
 preload_app true
-listen "#{rails_root}/tmp/unicorn.sock"
-pid "#{rails_root}/tmp/unicorn.pid"
-stderr_path "#{rails_root}/log/unicorn_error.log"
-stdout_path "#{rails_root}/log/unicorn.log"
+listen "#{rails_root}/tmp/sockets/unicorn.sock"
+pid "#{rails_root}/tmp/pids/unicorn.pid"
+stderr_path "#{rails_root}/log/unicorn_stderr.log"
+stdout_path "#{rails_root}/log/unicorn_stdout.log"
 
 before_fork do |server, worker|
   Signal.trap 'TERM' do
