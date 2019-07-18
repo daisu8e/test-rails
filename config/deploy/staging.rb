@@ -7,7 +7,7 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-server "34.210.23.252", user: "ubuntu", roles: %w{app db web}
+server "34.222.118.217", user: "staging", roles: %w{app db web}
 
 
 # role-based syntax
@@ -32,6 +32,7 @@ server "34.210.23.252", user: "ubuntu", roles: %w{app db web}
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 
+set :unicorn_rack_env, "staging"
 
 
 # Custom SSH Options
